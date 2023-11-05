@@ -52,7 +52,7 @@ public class keuangan {
         saldo = 0;
         daftarTransaksi.clear();
         try {
-            File csvFile = new File("/home/arafi/NetBeansProjects/projectPBO/src/projectpbo/data.csv");
+            File csvFile = new File("data.csv"); //ganti dengan absolut path file csv
             PrintWriter out = new PrintWriter(csvFile);
             out.close();
         } catch (FileNotFoundException ex) {
@@ -62,7 +62,7 @@ public class keuangan {
     
     public void tulis() {
         try {
-            File csvFile = new File("/home/arafi/NetBeansProjects/projectPBO/src/projectpbo/data.csv");
+            File csvFile = new File("data.csv"); //ganti dengan absolut path file csv
             PrintWriter out = new PrintWriter(csvFile);
             for(transaksi listTransaksi:daftarTransaksi){
                 out.println(listTransaksi.getJenis()+","+listTransaksi.getNama()+","+listTransaksi.getNominal());
@@ -77,7 +77,7 @@ public class keuangan {
         try {
             saldo = 0;
             daftarTransaksi.clear();
-            Scanner input = new Scanner(new File("/home/arafi/NetBeansProjects/projectPBO/src/projectpbo/data.csv"));
+            Scanner input = new Scanner(new File("data.csv")); //ganti dengan absolut path file csv
             input.useDelimiter(",|\n");
             
             while(input.hasNext()){
